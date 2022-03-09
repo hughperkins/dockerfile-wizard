@@ -2,15 +2,20 @@
 
 echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
 
-echo "RUN pyenv versions"
-
-echo "RUN pyenv install 3.8.5"
-
-echo "RUN pyenv global 3.8.5"
-
 echo "RUN apt-get update"
 
 echo "RUN apt-get install -y gperf flex bison build-essential clang tcl-dev libboost-dev"
+
+# echo "RUN sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+   # libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev\
+   # libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl\
+   # git"
+
+# echo "RUN pyenv versions"
+
+# echo "RUN pyenv install 3.8.5"
+
+# echo "RUN pyenv global 3.8.5"
 
 echo "RUN wget ftp://ftp.icarus.com/pub/eda/verilog//v11/verilog-11.0.tar.gz && tar -xzvf verilog-11.0.tar.gz && \
     cd verilog-11.0 && ./configure && make && make install"
