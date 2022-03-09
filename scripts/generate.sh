@@ -2,7 +2,7 @@
 
 # echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
 # echo "FROM cimg/base:stable-20.04"
-echo "FROM ubuntu-2004:current"
+echo "FROM ubuntu:20.04"
 
 echo "RUN sudo apt-get update"
 
