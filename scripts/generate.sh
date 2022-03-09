@@ -4,7 +4,11 @@ echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
 
 echo "RUN apt-get update"
 
-echo "RUN apt-get install -y gperf flex bison build-essential clang tcl-dev libboost-dev"
+echo "RUN apt-get install -y gperf flex bison build-essential clang tcl-dev libboost-dev libgz libfl2 libfl-dev zlibc zlib1g zlib1g-dev perl git ccache libgoogle-perftools-dev numactl perl-doc python3"
+
+echo "RUN python -V"
+
+echo "RUN python3 -V"
 
 # echo "RUN sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
    # libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev\
@@ -17,10 +21,12 @@ echo "RUN apt-get install -y gperf flex bison build-essential clang tcl-dev libb
 
 # echo "RUN pyenv global 3.8.5"
 
+echo "RUN git clone https://github.com/verilator/verilator && cd verilator && git checkout v4.218 && autoconf && ./configure && make && make install"
+
 echo "RUN wget ftp://ftp.icarus.com/pub/eda/verilog//v11/verilog-11.0.tar.gz && tar -xzvf verilog-11.0.tar.gz && \
     cd verilog-11.0 && ./configure && make && make install"
 # echo "RUN apt-get install -y iverilog"
-echo "RUN apt-get install -y verilator"
+# echo "RUN apt-get install -y verilator"
 # echo "RUN apt-get install -y yosys"
 
 if [ ! -e $PYTHON_VERSION_NUM ] ; then
