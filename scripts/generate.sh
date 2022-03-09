@@ -2,7 +2,11 @@
 
 echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
 
-echo "RUN pyenv global 3.5.2"
+echo "RUN pyenv versions"
+
+echo "RUN pyenv install 3.8.5"
+
+echo "RUN pyenv global 3.8.5"
 
 echo "RUN apt-get update"
 
