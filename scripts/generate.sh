@@ -7,7 +7,7 @@ echo "RUN apt-get update"
 echo "RUN apt-get install -y gperf flex bison build-essential"
 
 echo "RUN wget https://github.com/YosysHQ/yosys/archive/refs/tags/yosys-0.15.tar.gz && tar -xf yosys-0.15.tar.gz && cd yosys-0.15 && \
-    make &&
+    make && \
     make install"
 
 echo "RUN wget ftp://ftp.icarus.com/pub/eda/verilog//v11/verilog-11.0.tar.gz && tar -xzvf verilog-11.0.tar.gz && \
