@@ -4,7 +4,7 @@ echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
 
 echo "RUN apt-get update"
 
-echo "RUN apt-get install -y gperf flex bison"
+echo "RUN apt-get install -y gperf flex bison build-essential"
 
 echo "RUN wget https://github.com/YosysHQ/yosys/archive/refs/tags/yosys-0.15.tar.gz && tar -xf yosys-0.15.tar.gz && cd yosys-0.15 && \
     make &&
