@@ -4,7 +4,9 @@ echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
 
 echo "RUN apt-get update"
 
-echo "RUN apt-get install -y iverilog"
+echo "RUN wget ftp://ftp.icarus.com/pub/eda/verilog//v11/verilog-11.0.tar.gz && tar -xzvf verilog-11.0.tar.gz && \
+    cd verilog-11.0 && ./configure && make && make install"
+# echo "RUN apt-get install -y iverilog"
 echo "RUN apt-get install -y verilator"
 echo "RUN apt-get install -y yosys"
 
