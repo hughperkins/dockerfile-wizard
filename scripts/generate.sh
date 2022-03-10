@@ -4,7 +4,7 @@
 # echo "FROM cimg/base:stable-20.04"
 echo "FROM ubuntu:20.04"
 
-echo "RUN sudo apt-get update"
+echo "RUN apt-get update"
 
 echo "RUN apt-get install -y gperf flex bison build-essential clang tcl-dev libboost-dev libfl-dev zlibc zlib1g zlib1g-dev perl git ccache libgoogle-perftools-dev numactl perl-doc python3"
 
